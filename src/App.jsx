@@ -1,20 +1,32 @@
 import React from 'react';
-import Navbar from './Components/NavBar/NavBar';
-import SecondSection from './Components/Secondsection/SecondSection';
-import OwlCarousel from './Components/OwlCarousel/OwlCarousel';
-import Gallery from './Components/Gallery/Gallery';
-import Form from './Components/Form/FormComponents';
-
+import Home from './Pages/Home/Home';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AppLayout from './AppLayout';
+import Login from './Pages/UserLogin/UserLogin';
+import Register from './Pages/Registration/Registraion';
 function App() {
-  return (
-    <>
-      <Navbar />
-      <SecondSection />
-      <OwlCarousel />
-      <Gallery />
-      <Form />
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      element: <AppLayout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path :'login',
+          element:<Login/>,
+        },
+        {
+          path : 'signup',
+          element : <Register/>,
+        }
+     
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

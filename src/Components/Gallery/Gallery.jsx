@@ -2,7 +2,7 @@ import React from 'react';
 import './Gallery.css';
 function Gallery() {
   return (
-    <div>
+    <div id='Card'>
       <div className="galleryheading">
         <p>Our Card Range</p>
       </div>

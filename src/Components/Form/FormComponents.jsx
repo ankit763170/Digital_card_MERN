@@ -1,13 +1,16 @@
-import { useState } from 'react';
+  import { useState } from 'react';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './Form.css';
 import { Alert } from 'bootstrap';
+import {useDispatch} from 'react-redux' ;
+import { setData } from '../../Store/EnquirySlice';
 
 
 
 
 function FormComponents() {
+  const dispatch= useDispatch();
   const [formValues, setFormValues] = useState({
     firstName: '',
     lastName: '',
@@ -24,15 +27,19 @@ function FormComponents() {
       ...formValues,
       [name]: value,
     });
+dispatch(setData(formValues))
   };
   const handleSubmit = (event) => {
-  
+console.log("submitted")
     if (isFormValid()) {
+      console.log(formValues)
       // Form is valid, you can submit or perform further actions here
-      Alert('Thank You For Your Response.');
+      alert('Thank You For Your Response.');
+      
     } else {
       // Form is invalid, display errors
-     Alert('Please enter valid Data')
+
+     alert('Please enter valid Data')
     }
   };
 
@@ -70,7 +77,7 @@ function FormComponents() {
   };
 
   return (
-    <div className="container">
+    <div id='Form' className="container">
       <div className="row">
         <div className="col-lg-6">
           <div className="mb-3">
@@ -121,7 +128,7 @@ function FormComponents() {
               </label>
               <input
    type="number"
-                className={`form-control ${formErrors.lastName ? 'is-invalid' : ''}`}
+                className={`form-control ${formErrors.phoneNumber ? 'is-invalid' : ''}`}
                 id="formGroupExampleInput2"
                 name="phoneNumber"
                 value={formValues.phoneNumber}
@@ -129,7 +136,32 @@ function FormComponents() {
               />
               {formErrors.phoneNumber && <div className="invalid-feedback">{formErrors.phoneNumber}</div>}
             </div>
-            {/* Add similar fields for jobTitle and websiteURL */}
+            <label htmlFor="jobTitle" className="form-label">
+            jobTitle
+              </label>
+            <input
+  type='text'
+  className="form-control"
+  
+        
+                id="formGroupExampleInput"
+                name="jobTitle"
+                value={formValues.jobTitle}
+                onChange={handleInputChange}
+              />
+           <label htmlFor="websiteURL" className="form-label">
+  Website URL
+</label>
+<input
+  type="text"
+  className={`form-control ${formErrors.websiteURL ? 'is-invalid' : ''}`}
+  id="websiteURL"
+  name="websiteURL"  // Corrected the name attribute here
+  value={formValues.websiteURL}
+  onChange={handleInputChange}
+/>
+{formErrors.websiteURL && <div className="invalid-feedback">{formErrors.websiteURL}</div>}
+
             <div className="btn-button-form">
               <button type="submit" onClick={handleSubmit} className="btn btn-primary btn-lg rounded-pill">
                 Schedule a Demo

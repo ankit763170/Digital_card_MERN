@@ -1,43 +1,64 @@
-import './Owl.css'
+import React from 'react';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-function OwlCarousel() {
-   return(
-    <>
-    <div class="carousel">
+function MyOwlCarousel() {
+  const options = {
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    margin: 0,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 5,
+      },
+    },
+  };
+
+  return (
+    <div>
+      <div className="carousel">
         <p>Industries Who Love Us</p>
       </div>
-      <div class="container">
-        <div class="owl-carousel owl-theme">
-          <div class="item"><img src="img/slider1.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider2.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider3.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider4.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider1.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider2.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider3.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider4.png" alt="sliderimg" /></div>
-        </div>
-      </div>    <div class="carousel">
-        <p>Industries Who Love Us</p>
+      <div className="container">
+        <OwlCarousel className="owl-theme" {...options}>
+          <div className="item">
+            <img src="img/slider1.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider2.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider3.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider4.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider1.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider2.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider3.png" alt="sliderimg" />
+          </div>
+          <div className="item">
+            <img src="img/slider4.png" alt="sliderimg" />
+          </div>
+        </OwlCarousel>
       </div>
-      <div class="container">
-        <div class="owl-carousel owl-theme">
-          <div class="item"><img src="img/slider1.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider2.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider3.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider4.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider1.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider2.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider3.png" alt="sliderimg" /></div>
-          <div class="item"><img src="img/slider4.png" alt="sliderimg" /></div>
-        </div>
-      </div>
+    </div>
+  );
+}
 
-    </>
-   )
-  }
-  
-  export default OwlCarousel;
-  
-
-
+export default MyOwlCarousel;
