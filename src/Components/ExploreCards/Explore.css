@@ -1,0 +1,40 @@
+/* ImageRow.css */
+.row {
+    --bs-gutter-x: 13rem;
+  }
+   
+  h2 {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+   
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+   
+  .image-container h2 {
+    margin-top: 20px;
+  }
+   
+  .image-container img {
+    max-height: 200px;
+    width: auto;
+    margin-top: 20px;
+  }
+   
+  .btn-container {
+    text-align: center;
+    margin-top: 35px;
+  }
+   
+  .btn-primary {
+    width: 350px;
+    height: 60px;
+  background-color: #15203d;
+  --bs-btn-hover-bg: #030c1a;
+  border-radius: 50px;
+}

@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #252a32;
+  background: #fff;
+}
+
+/* Header Links and Buttons */
+.topHeader a {
+  font-size: 18px;
+}
+
+.singIn a {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #15203d;
+  /* Additional Navbar Styles Here */
+}
+
+/* Grid Layout */
+.box,
+.box1,
+.box2 {
+  display: flex;
+  gap: 40px;
+}
+
+.one {
+  flex: 1;
+  margin: auto;
+}
+
+two {
+  flex: 2;
+  margin: auto;
+}
+
+three {
+  flex: 1;
+  margin: auto;
+}
+
+four {
+  flex: 2;
+  margin: auto;
+}
+
+/* Gallery Heading */
+.galleryheading p {
+  text-align: center;
+  margin: 80px 0 120px 0;
+  font-weight: 500;
+  font-size: 35px;
+}
+
+/* Button Styles */
+.btn-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-button button {
+  width: 200px;
+  background-color: #15203d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-button button:hover {
+  background-color: #fff;
+  color: #15203d;
+}
+
+/* Accordion Styles */
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.accordion-item {
+  background-color: #2c3a61;
+  color: #fff;
+  margin: 3.2rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12), 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding-left: 43px;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+/* Form Styling */
+label {
+  color: #000;
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background: #d9d9d9;
+}
+
+/* Button Form Styles */
+.btn-button-form {
+  margin-left: 100px;
+  margin-top: 80px;
+}
+
+.btn-button-form button {
+  width: 260px;
+  background-color: #15203d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-button-form button:hover {
+  background-color: #fff;
+  color: #15203d;
+}
